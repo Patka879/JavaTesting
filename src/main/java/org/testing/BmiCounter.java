@@ -14,6 +14,11 @@ public class BmiCounter {
         System.out.println("Your BMI: " + bmiCounter.count(weight, height));
     }
         public static double count(double w, double h) {
+
+            if (h <= 0 || w <= 0) {
+                throw new IllegalArgumentException("Values can not be lower or equal 0");
+            }
+
             double result = w / ( h *  h);
             return result;
         }
